@@ -26,8 +26,9 @@ public class SettingsWindow extends JFrame {
 
     SettingsWindow(GameWindow gameWindow) { // 23а. Конструктор. Принимаем ссылку на ГВ и присваеваем её
                                             //23а. внутри ГВ мы не можем вызвать сетингсвиндов, т.к. конструктор не совападает, а дефолтного нет
-        this.gameWindow = gameWindow;
-        setSize(WINDOW_WIDTH, WINDOW_HEIGHT); // задаем размер окна настроек
+        this.gameWindow = gameWindow; // это значит, что этому объекту создаваему объекту SettingsWindow, (т.е. это уже объект не GameWindow, а СетингВин)
+                                      // и этому объекту в поле GameWindow (зис это всегда текущий объект класса)
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT); // задаем размер окна настроек надо полодить переменну gameWindow
         Rectangle gameWindowBounds = gameWindow.getBounds();
         int posX = (int) gameWindowBounds.getCenterX() - WINDOW_WIDTH / 2; // задаем положение окна относительно центра и бОльшего окна (рисунок)
         int posY = (int) gameWindowBounds.getCenterY() - WINDOW_HEIGHT / 2;
